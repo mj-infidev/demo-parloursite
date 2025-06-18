@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en"></html>
+<head>
+    <meta charset="UTF-8">
+    <title>Parlour</title>
+    
+    <!-- Libraries -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- Font Awesome CDN for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+    <!-- Web fonts -->
+    <link rel="stylesheet" href="css/custom.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Roboto+Slab:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+    <style>
+       .image-stack {
+  display: flex;
+  flex-direction: row; /* Ensure images are in a row */
+  flex-wrap: nowrap;   /* Prevent wrapping on larger screens */
+  gap: 10px;
+  justify-content: center;
+}
+
+.img-style {
+  width: 23%;            /* Adjusted to fit 4 in a row with gaps */
+  height: 500px;
+  object-fit: cover;
+  border-radius: 20px;
+  transition: transform 0.3s ease;
+}
+
+/* Mobile View */
+@media (max-width: 767px) {
+  .image-stack {
+    flex-direction: column; /* Stack images vertically on small screens */
+    align-items: center;
+  }
+
+  .img-style {
+    width: 80%;   /* Full width on mobile */
+    height: auto;
+  }
+}
+
+#review-us .row {
+    display: flex;
+    justify-content: center;
+    gap: 15px; /* space between icons */
+    margin-top: 10px;
+}
+
+#review-us .social-icons {
+    width: 50px;
+    height: 50px;
+    border: 2px solid #e41e45;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s;
+}
+
+#review-us .social-icons i {
+    font-size: 25px;
+    color: #e41e45; /* or your preferred icon color */
+}
+
+.outer-container {
+    position: relative;
+    display: inline-block;
+    width: 120px; /* match the circle size */
+}
+
+.circle-container {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.circle-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+    border-radius: 50%;
+}
+
+.quote-icon {
+    position: absolute;
+    bottom: -20px; /* Adjust to show half-out */
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 40px;
+    color: #e91e63;
+    z-index: 2;
+}
+
+.card-hover {
+    transition: transform 0.3s ease-in-out;
+    cursor: pointer;
+}
+.card-hover:hover {
+    transform: scale(1.03);
+}
+.card {
+    position: relative;
+    height: 300px; /* or whatever fixed height you prefer */
+    overflow: hidden;
+}
+
+.card-img-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 1rem;
+    background: rgba(0, 0, 0, 0.5); /* semi-transparent background */
+    color: #fff;
+    z-index: 2;
+}
+
+.card-img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+    </style>
+</head>
+<body>
+    <!-- <nav>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+    <div class="home-banner" style="
+        width: 100%;
+        height: 800px;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        background: url('images/banner1.jpg') right top no-repeat;
+        background-size: auto 100%;
+        background-color: #f9bdb5;">
+        
+        <div class="banner-text" style="
+            padding-left: 50px;
+            color: white;
+            max-width: 50%;">
+            <h1 style="font-size: 2.5rem; margin: 0;">Welcome to Sri Eswari Ghee</h1>
+            <p style="font-size: 1.2rem;">Pure. Traditional. Trusted. Discover the richness of homemade flavor.</p>
+        </div>
+    </div> -->
+    <!-- Transparent Navbar -->
+<nav style="
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+    background: rgba(255, 255, 255, 0); /* transparent */
+    padding: 20px 50px;
+">
+    <ul style="
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        gap: 15px;
+    ">
+        <li><a href="index.html" style="color: white; text-decoration: none;">Home</a></li>
+        <li class="active"><a href="about.html" style="color: white; text-decoration: none;">About</a></li>
+        <li><a href="services.html" style="color: white; text-decoration: none;">Services</a></li>
+        <!-- <li><a href="gallery.html" style="color: white; text-decoration: none;">Gallery</a></li> -->
+        <li><a href="contact.html" style="color: white; text-decoration: none;">Contact</a></li>
+    </ul>
+</nav>
+
+<!-- Banner Section -->
+<div class="home-banner" style="
+    width: 100%;
+    height: 800px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    background: url('images/background/11.jpeg') right top no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-color: #f9bdb5;
+    color: white;
+    overflow: hidden;
+">
+
+    <!-- Overlay -->
+    <div style="
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5); /* semi-transparent dark overlay */
+        z-index: 1;
+    "></div>
+
+</div>
+<!-- Banner Section -->
+<div id="about-us" class="p-3">
+        <div class="container">
+            <div class="row">
+                <span class="col-12 text-center h3 mt-5" style="color: #e41e45;">About Us</span>
+            </div>
+            <div class="sm-break"></div>
+            <div class="row mt-5">
+                <div class="col-12 col-md-4">
+                    <div class="d-flex flex-column">
+                        <div class="p-2">
+                            <div class="key-header my-3" style="letter-spacing: 5px;">SMILY BEAUTY PARLOUR</div>
+                            <div class="key-content" style="font-size: 3rem; line-height: 4rem;color: #e41e45;font-weight: bold;">Where you can relax and enjoy life</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-4 text-center">
+                    <img class="" src="images/background/12.jpg" alt="" style="width: 100%;">
+                </div>
+                <div class="col-12 col-md-4">
+                    <div class="d-flex flex-column">
+                        <div class="p-2">
+                            <div class="key-content">Welcome to <b style="color: #e41e45;font-weight: bold;">Smily Beauty Parlour</b>, your trusted destination for authentic South Indian beauty and wellness traditions. Located in the heart of Sivakasi, we bring timeless beauty rituals, natural care, and expert services to help you look and feel your best.</div>
+                            <div class="key-content">Founded with a passion for preserving rich beauty heritage, our parlour offers a warm and welcoming environment where tradition meets modern elegance. From bridal makeovers and saree draping to luxurious hair care and herbal facials, every service is crafted to enhance your natural glow.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container my-4">
+        <h3 class="text-center" style="color: #e41e45;">Meet our team</h3>
+        <div class="sm-break"></div>
+        <h5 class="text-center" style="line-height: 2rem;">At <b style="color: #e41e45;font-weight: bold;">Smily Beauty Parlour</b>, our strength lies in the hands of our passionate and skilled beauty professionals. Every member of our team brings years of experience, deep cultural knowledge, and a genuine love for making clients feel confident and beautiful.</h5>
+        <div class="row justify-content-center my-5">
+            <!-- Team Member 1 -->
+            <div class="col-md-4 d-flex justify-content-center my-3">
+                <div class="card text-white card-hover overflow-hidden" style="width: 18rem;">
+                    <img src="images/img1.jpg" class="card-img" alt="Lakshmi">
+                    <div class="card-img-overlay d-flex flex-column justify-content-end">
+                        <h6 class="card-title">Lakshmi</h6>
+                        <p class="card-text">Founder & Chief Stylist – Expert in South Indian bridal makeup with 12+ years of experience.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Team Member 2 -->
+            <div class="col-md-4 d-flex justify-content-center my-3">
+                <div class="card text-white card-hover overflow-hidden" style="width: 18rem;">
+                    <img src="images/img2.jpg" class="card-img" alt="Divya">
+                    <div class="card-img-overlay d-flex flex-column justify-content-end">
+                        <h6 class="card-title">Divya</h6>
+                        <p class="card-text">Makeup Artist & Skincare Specialist – Known for blending modern glam with tradition.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Team Member 3 -->
+            <div class="col-md-4 d-flex justify-content-center my-3" data-animation="animate__bounceIn">
+                <div class="card text-white card-hover overflow-hidden" style="width: 18rem;">
+                    <img src="images/img3.jpg" class="card-img" alt="Rekha">
+                    <div class="card-img-overlay d-flex flex-column justify-content-end">
+                        <h6 class="card-title">Rekha</h6>
+                        <p class="card-text">Mehendi Artist & Saree Draping Specialist – Traditional styles with a modern touch.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+
+    <footer style="background-color: #111; color: white; padding: 50px 20px;">
+        <div style="display: flex; flex-wrap: wrap; justify-content: space-between;">
+            <div style="flex: 1; min-width: 250px;">
+                <img src="logo.png" alt="Christina Koller" style="height: 60px;">
+                <h2>Christina Koller</h2>
+                <p><strong>You can also list down your achievements or some well-known clients you’ve worked for.</strong>
+                    Such details often attract customers and encourage them to give you a try. Make sure you add everything
+                    possible in this section.</p>
+            </div>
+
+
+            <div style="flex: 1; min-width: 130px;margin-left:70px;">
+                <h3>Quick Links</h3>
+                <div>
+                    <p><a href="#" style="color: white; text-decoration: none;">Home</a></p>
+                    <p><a href="#" style="color: white; text-decoration: none;">About</a></p>
+                    <p><a href="#" style="color: white; text-decoration: none;">Services</a></p>
+                    <p><a href="#" style="color: white; text-decoration: none;">Portfolio</a></p>
+                    <p><a href="#" style="color: white; text-decoration: none;">Contact</a></p>
+                </div>
+            </div>
+            <div style="flex: 1; min-width: 200px;line-height: 15px;">
+                <h3>Say Hi!</h3>
+                <p>info@example.com<br>contact@example.com</p>
+
+                <h3>Call Us</h3>
+                <p>Phone: +1 916-875-2235<br>Toll Free: +1 910-626-85255</p>
+
+                <h3>Find Us</h3>
+                <p>123 Fifth Avenue, Opp Hut,<br>New York, USA.</p>
+            </div>
+            <div style="flex: 1; min-width: 150px;">
+                <h3>Follow Us</h3>
+                <div style="display: flex; gap: 10px;">
+                    <img src="facebook-icon.png" alt="Facebook" style="height: 30px; cursor: pointer;">
+                    <img src="twitter-icon.png" alt="Twitter" style="height: 30px; cursor: pointer;">
+                    <img src="instagram-icon.png" alt="Instagram" style="height: 30px; cursor: pointer;">
+                    <img src="youtube-icon.png" alt="YouTube" style="height: 30px; cursor: pointer;">
+                </div>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 40px; font-size: 14px;">
+            <p>Copyright © 2025 Makeup Artist</p>
+            <p>Powered by Makeup Artist</p>
+        </div>
+    </footer>
+</body>
+</html>

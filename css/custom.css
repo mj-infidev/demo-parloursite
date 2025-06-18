@@ -1,0 +1,110 @@
+body {
+    font-family: 'PT Sans', sans-serif;
+    font-size: 16px;
+    margin: 0;
+    padding: 0;
+}
+nav {
+    background-color: #9d467e;
+    padding: 10px 0;
+}
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+nav ul li {
+    margin: 0 25px;
+    padding: 10px;
+}
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    /* font-weight: bold; */
+    font-size: 16px;
+    transition: color 0.2s;
+}
+nav ul .active {
+    border-bottom: 2px solid #fff;
+}
+nav ul li a:hover {
+    color: #ffd6ef;
+}
+footer {
+    font-family: 'PT Sans', sans-serif;
+    font-weight: 400;
+}
+.container .card {
+    border: none;
+    box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 0.07);
+    height: 300px;
+}
+.card-hover {
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+.card-hover:hover {
+    transform: translateY(-10px) scale(1.03);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.18);
+    z-index: 2;
+}
+.service-card{
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    transform-style: preserve-3d;
+}
+.service-card:hover {
+  transform: rotateY(5deg) scale(1.03);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.sm-break {
+    height: 2px;
+    background-color: #f1f1f1;
+    margin: 15px auto;
+    width: 100px;
+}
+
+.key-header, .key-content {
+    font-family: 'PT Sans', sans-serif;
+}
+
+.key-content {
+    font-size: 1.15rem;
+    line-height: 2rem;
+    font-weight: 300;
+}
+
+.key-header {
+    font-weight: bold;
+    font-size: 1.25rem;
+}
+
+
+@media screen and (max-width: 576px) {
+    .sm-break {
+        margin: 5px auto;
+    }
+
+    .iphone_pro {
+        width: 40%;
+    }
+
+    .iphone_white, .iphone_black {
+        width: 40%;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 991.98px) {
+    .sm-break {
+        margin: 5px auto;
+    }
+
+    .iphone_pro {
+        width: 70%;
+    }
+
+    .iphone_white, .iphone_black {
+        width: 70%;
+    }
+}

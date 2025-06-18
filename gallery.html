@@ -1,0 +1,38 @@
+<div id="gallery" class="p-3">
+        <div class="container">
+            <div class="row">
+                <span class="col-12 text-center h1 m-0">Gallery</span>
+            </div>
+            <div class="sm-break"></div>
+            <div class="row">
+                <div class="gallery col-12 text-center">
+                    <img src="images/gallery/image1.jpg" alt="Farm Image 1" class="gallery-img" style="cursor:pointer;">
+                    <img src="images/gallery/image2.jpg" alt="Farm Image 2" class="gallery-img" style="cursor:pointer;">
+                    <img src="images/gallery/image3.jpg" alt="Farm Image 3" class="gallery-img" style="cursor:pointer;">
+                    <img src="images/gallery/image4.jpg" alt="Farm Image 4" class="gallery-img" style="cursor:pointer;">
+                    <img src="images/gallery/image5.jpg" alt="Farm Image 5" class="gallery-img" style="cursor:pointer;">
+                    <img src="images/gallery/image6.jpg" alt="Farm Image 6" class="gallery-img" style="cursor:pointer;">
+                    <img src="images/gallery/image7.jpg" alt="Farm Image 7" class="gallery-img" style="cursor:pointer;">
+                    <img src="images/gallery/image8.jpg" alt="Farm Image 8" class="gallery-img" style="cursor:pointer;">
+                </div>
+            </div>
+        </div>
+        <div id="imgModal" class="modal" tabindex="-1" style="display:none; position:fixed; z-index:1050; left:0; top:0; width:100vw; height:100vh; background:rgba(0,0,0,0.8); align-items:center; justify-content:center;">
+            <span id="closeModal" style="position:absolute;top:20px;right:40px;font-size:40px;color:#fff;cursor:pointer;">&times;</span>
+            <img id="modalImg" src="" alt="Gallery Large" style="max-width:90vw;max-height:90vh;box-shadow:0 0 20px #000;">
+        </div>
+    </div>
+    <script>
+        document.querySelectorAll('.gallery-img').forEach(function(img) {
+            img.addEventListener('click', function() {
+                document.getElementById('modalImg').src = this.src;
+                document.getElementById('imgModal').style.display = 'flex';
+            });
+        });
+        document.getElementById('closeModal').onclick = function() {
+            document.getElementById('imgModal').style.display = 'none';
+        };
+        document.getElementById('imgModal').onclick = function(e) {
+            if (e.target === this) this.style.display = 'none';
+        };
+    </script>
