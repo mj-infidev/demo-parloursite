@@ -1,27 +1,230 @@
-<div id="gallery" class="p-3">
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Gallery</title>
+    
+    <!-- Libraries -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/fontawesome.min.css">
+    <link rel="stylesheet" href="css/custom.css">
+
+    <!-- Web fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Roboto+Slab:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <style>
+        .navbar.navbar-expand-lg {
+            background: rgba(255, 255, 255, 0); 
+            padding: 20px 50px; 
+            z-index: 10;
+        }
+        .home-banner {
+            height: 800px;
+            background: url('images/background/13.jpg') right top no-repeat;
+            background-size: cover;
+            background-position: center;
+            background-color: #f9bdb5;
+            overflow: hidden;
+        }
+
+        .home-banner .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.3);
+            z-index: 1;
+        }
+        .circle-container {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            overflow: hidden;
+        }
+
+        .circle-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: top center;
+            border-radius: 50%;
+        }
+        footer a img:hover {
+            transform: scale(1.1);
+            transition: transform 0.2s ease;
+        }
+        .navbar-hide {
+            transform: translateY(-100%);
+            transition: transform 0.3s ease-in-out;
+        }
+        /* Mobile View */
+        @media (max-width: 576px) {
+            .img-style {
+                width: 35%;
+            }
+            .home-banner {
+                background-position: 75% center !important;
+                background-size: cover !important;
+            }
+            .navbar .navbar-toggler {
+                background-color: #976059 !important;
+            }
+            .navbar .navbar-brand {
+                color: #000 !important;
+            }
+            .navbar.navbar-expand-lg {
+                background: white !important;
+                padding: 10px 10px 10px 10px !important;
+            }
+            .navbar .nav-link {
+                color: #000 !important;
+            }
+            .gallery {
+                column-count: 2 !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand text-white" href="#">Smily Beauty</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link text-white" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="services.html">Services</a></li>
+                    <li class="nav-item"><a class="nav-link active text-white" href="#">Gallery</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Banner Section -->
+    <div class="home-banner d-flex align-items-center position-relative text-white">
+        <!-- Overlay -->
+        <div class="overlay" style=></div>
+    </div>
+    <!-- Banner Section -->
+    <div id="contact" class="p-3">
         <div class="container">
             <div class="row">
-                <span class="col-12 text-center h1 m-0">Gallery</span>
+                <span class="col-12 text-center h3 mt-5" style="color: #e41e45;">Gallery</span>
             </div>
-            <div class="sm-break"></div>
+        </div>
+    </div>
+    <div id="gallery" class="p-3">
+        <div class="container">
             <div class="row">
                 <div class="gallery col-12 text-center">
-                    <img src="images/gallery/image1.jpg" alt="Farm Image 1" class="gallery-img" style="cursor:pointer;">
-                    <img src="images/gallery/image2.jpg" alt="Farm Image 2" class="gallery-img" style="cursor:pointer;">
-                    <img src="images/gallery/image3.jpg" alt="Farm Image 3" class="gallery-img" style="cursor:pointer;">
-                    <img src="images/gallery/image4.jpg" alt="Farm Image 4" class="gallery-img" style="cursor:pointer;">
-                    <img src="images/gallery/image5.jpg" alt="Farm Image 5" class="gallery-img" style="cursor:pointer;">
-                    <img src="images/gallery/image6.jpg" alt="Farm Image 6" class="gallery-img" style="cursor:pointer;">
-                    <img src="images/gallery/image7.jpg" alt="Farm Image 7" class="gallery-img" style="cursor:pointer;">
-                    <img src="images/gallery/image8.jpg" alt="Farm Image 8" class="gallery-img" style="cursor:pointer;">
+                    <img src="images/aari.jpg" alt="Aari Blouses" class="gallery-img" style="cursor:pointer;">
+                    <img src="images/stich.jpg" alt="Stitching" class="gallery-img" style="cursor:pointer;">
+                    <img src="images/beautician.jpg" alt="beautician" class="gallery-img" style="cursor:pointer;">
+                    <img src="images/drap.jpg" alt="Saree Drapping" class="gallery-img" style="cursor:pointer;">
+                    <img src="images/pleating.jpg" alt="Prepleating" class="gallery-img" style="cursor:pointer;">
+                    <img src="images/mehndi.jpg" alt="Mehandi" class="gallery-img" style="cursor:pointer;">
+                    <img src="images/jewellery.jpg" alt="Rental Jewellery" class="gallery-img" style="cursor:pointer;">
+                    <img src="images/kundan.jpg" alt="Kundhan Bangles" class="gallery-img" style="cursor:pointer;">
+                    <img src="images/aaraththi.jpg" alt="Aarthi Plates" class="gallery-img" style="cursor:pointer;">
+                    <img src="images/tattoo.jpg" alt="Tattoo" class="gallery-img" style="cursor:pointer;">
                 </div>
             </div>
         </div>
-        <div id="imgModal" class="modal" tabindex="-1" style="display:none; position:fixed; z-index:1050; left:0; top:0; width:100vw; height:100vh; background:rgba(0,0,0,0.8); align-items:center; justify-content:center;">
-            <span id="closeModal" style="position:absolute;top:20px;right:40px;font-size:40px;color:#fff;cursor:pointer;">&times;</span>
-            <img id="modalImg" src="" alt="Gallery Large" style="max-width:90vw;max-height:90vh;box-shadow:0 0 20px #000;">
-        </div>
     </div>
+    <!-- Modal with Prev/Next buttons -->
+    <div id="imgModal" class="modal" tabindex="-1" style="display:none; position:fixed; z-index:1050; left:0; top:0; width:100vw; height:100vh; background:rgba(0,0,0,0.8); align-items:center; justify-content:center;">
+        <span id="closeModal" style="position:absolute;top:20px;right:40px;font-size:40px;color:#fff;cursor:pointer;">&times;</span>
+        <button id="prevImg" style="position:absolute;left:30px;top:50%;transform:translateY(-50%);background:none;border:none;color:#fff;font-size:50px;cursor:pointer;z-index:2;">&#10094;</button>
+        <img id="modalImg" src="" alt="Gallery Large" style="max-width:90vw;max-height:90vh;box-shadow:0 0 20px #000;">
+        <button id="nextImg" style="position:absolute;right:30px;top:50%;transform:translateY(-50%);background:none;border:none;color:#fff;font-size:50px;cursor:pointer;z-index:2;">&#10095;</button>
+    </div>
+    <div id="imgModal" class="modal" tabindex="-1" style="display:none; position:fixed; z-index:1050; left:0; top:0; width:100vw; height:100vh; background:rgba(0,0,0,0.8); align-items:center; justify-content:center;">
+        <span id="closeModal" style="position:absolute;top:20px;right:40px;font-size:40px;color:#fff;cursor:pointer;">&times;</span>
+        <img id="modalImg" src="" alt="Gallery Large" style="max-width:90vw;max-height:90vh;box-shadow:0 0 20px #000;">
+    </div>
+    <footer style="background-color: #111; color: white; padding: 50px 20px;">
+        <div class="container">
+            <div class="row text-center text-md-start gy-4">
+
+                <!-- Profile/Info -->
+                <div class="col-12 col-md-6 col-lg-3">
+                    <div class="circle-container mb-3">
+                        <img src="images/img3.jpg" alt="Profile Image" class="circle-image" style="width:100px; height:100px; border-radius:50%;">
+                    </div>
+                    <h2>Christina Koller</h2>
+                    <p><strong>You can also list down your achievements or some well-known clients you’ve worked for.</strong>
+                        Such details often attract customers and encourage them to give you a try. Make sure you add everything
+                        possible in this section.</p>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="col-12 col-sm-6 col-lg-2">
+                    <h3>Quick Links</h3>
+                    <p><a href="#" class="text-white text-decoration-none">Home</a></p>
+                    <p><a href="#" class="text-white text-decoration-none">About</a></p>
+                    <p><a href="#" class="text-white text-decoration-none">Services</a></p>
+                    <p><a href="#" class="text-white text-decoration-none">Portfolio</a></p>
+                    <p><a href="#" class="text-white text-decoration-none">Contact</a></p>
+                </div>
+
+                <!-- Contact Info -->
+                <div class="col-12 col-sm-6 col-lg-4">
+                    <h3>Say Hi!</h3>
+                    <p>info@example.com<br>contact@example.com</p>
+
+                    <h3>Call Us</h3>
+                    <p>Phone: +1 916-875-2235<br>Toll Free: +1 910-626-85255</p>
+
+                    <h3>Find Us</h3>
+                    <p>123 Fifth Avenue, Opp Hut,<br>New York, USA.</p>
+                </div>
+
+                <!-- Social Media -->
+                <div class="col-12 col-md-6 col-lg-3">
+                    <h3>Follow Us</h3>
+                    <div class="d-flex justify-content-center justify-content-md-start gap-3">
+                        <a href="https://facebook.com" target="_blank">
+                            <img src="https://img.icons8.com/ios-filled/30/ffffff/facebook-new.png" alt="Facebook" style="height: 30px; cursor: pointer;">
+                        </a>
+                        <a href="https://twitter.com" target="_blank">
+                            <img src="https://img.icons8.com/ios-filled/30/ffffff/twitter--v1.png" alt="Twitter" style="height: 30px; cursor: pointer;">
+                        </a>
+                        <a href="https://instagram.com" target="_blank">
+                            <img src="https://img.icons8.com/ios-filled/30/ffffff/instagram-new.png" alt="Instagram" style="height: 30px; cursor: pointer;">
+                        </a>
+                        <a href="https://youtube.com" target="_blank">
+                            <img src="https://img.icons8.com/ios-filled/30/ffffff/youtube-play.png" alt="YouTube" style="height: 30px; cursor: pointer;">
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-4" style="font-size: 14px;">
+                <p>Copyright © 2025 Makeup Artist</p>
+                <p>Powered by Makeup Artist</p>
+            </div>
+        </div>
+    </footer>
     <script>
         document.querySelectorAll('.gallery-img').forEach(function(img) {
             img.addEventListener('click', function() {
@@ -35,4 +238,71 @@
         document.getElementById('imgModal').onclick = function(e) {
             if (e.target === this) this.style.display = 'none';
         };
+
+        const galleryImgs = Array.from(document.querySelectorAll('.gallery-img'));
+        let currentImgIdx = 0;
+
+        function showModal(idx) {
+            currentImgIdx = idx;
+            document.getElementById('modalImg').src = galleryImgs[idx].src;
+            document.getElementById('imgModal').style.display = 'flex';
+        }
+
+        galleryImgs.forEach(function(img, idx) {
+            img.addEventListener('click', function() {
+                showModal(idx);
+            });
+        });
+
+        document.getElementById('closeModal').onclick = function() {
+            document.getElementById('imgModal').style.display = 'none';
+        };
+        document.getElementById('imgModal').onclick = function(e) {
+            if (e.target === this) this.style.display = 'none';
+        };
+
+        document.getElementById('prevImg').onclick = function(e) {
+            e.stopPropagation();
+            currentImgIdx = (currentImgIdx - 1 + galleryImgs.length) % galleryImgs.length;
+            document.getElementById('modalImg').src = galleryImgs[currentImgIdx].src;
+        };
+        document.getElementById('nextImg').onclick = function(e) {
+            e.stopPropagation();
+            currentImgIdx = (currentImgIdx + 1) % galleryImgs.length;
+            document.getElementById('modalImg').src = galleryImgs[currentImgIdx].src;
+        };
+
+        // Optional: Keyboard navigation
+        document.addEventListener('keydown', function(e) {
+            if (document.getElementById('imgModal').style.display === 'flex') {
+                if (e.key === 'ArrowLeft') {
+                    document.getElementById('prevImg').click();
+                } else if (e.key === 'ArrowRight') {
+                    document.getElementById('nextImg').click();
+                } else if (e.key === 'Escape') {
+                    document.getElementById('closeModal').click();
+                }
+            }
+        });
+
+        // Hide navbar on scroll down, show on scroll up
+        let lastScrollTop = 0;
+        const navbar = document.querySelector('.navbar');
+
+        window.addEventListener('scroll', function () {
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+            if (scrollTop > lastScrollTop) {
+                // Scroll down
+                navbar.classList.add('navbar-hide');
+            } else {
+                // Scroll up
+                navbar.classList.remove('navbar-hide');
+            }
+
+            lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // For mobile or negative scrolling
+        });
     </script>
+</body>
+
+</html>

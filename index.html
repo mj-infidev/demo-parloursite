@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Parlour</title>
-    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Libraries -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <!-- Font Awesome CDN for icons -->
@@ -18,218 +18,227 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Roboto+Slab:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 
+    <!-- Bootstrap CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+
+
     <style>
        .image-stack {
-  display: flex;
-  flex-direction: row; /* Ensure images are in a row */
-  flex-wrap: nowrap;   /* Prevent wrapping on larger screens */
-  gap: 10px;
-  justify-content: center;
-}
+            display: flex;
+            flex-direction: row; /* Ensure images are in a row */
+            flex-wrap: nowrap;   /* Prevent wrapping on larger screens */
+            gap: 10px;
+            justify-content: center;
+        }
 
-.img-style {
-  width: 23%;            /* Adjusted to fit 4 in a row with gaps */
-  height: 500px;
-  object-fit: cover;
-  border-radius: 20px;
-  transition: transform 0.3s ease;
-}
+        .img-style {
+            width: 23%;            /* Adjusted to fit 4 in a row with gaps */
+            height: 500px;
+            object-fit: cover;
+            border-radius: 20px;
+            transition: transform 0.3s ease;
+        }
+        
+        #review-us .row {
+            display: flex;
+            justify-content: center;
+            gap: 15px; /* space between icons */
+            margin-top: 10px;
+        }
 
-/* Mobile View */
-@media (max-width: 767px) {
-  .image-stack {
-    flex-direction: column; /* Stack images vertically on small screens */
-    align-items: center;
-  }
+        #review-us .social-icons {
+            width: 50px;
+            height: 50px;
+            border: 2px solid #e41e45;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background-color 0.3s;
+        }
 
-  .img-style {
-    width: 80%;   /* Full width on mobile */
-    height: auto;
-  }
-}
+        #review-us .social-icons i {
+            font-size: 25px;
+            color: #e41e45; /* or your preferred icon color */
+        }
 
-#review-us .row {
-    display: flex;
-    justify-content: center;
-    gap: 15px; /* space between icons */
-    margin-top: 10px;
-}
+        .outer-container {
+            position: relative;
+            display: inline-block;
+            width: 120px; /* match the circle size */
+        }
 
-#review-us .social-icons {
-    width: 50px;
-    height: 50px;
-    border: 2px solid #e41e45;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: background-color 0.3s;
-}
+        .circle-container {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            overflow: hidden;
+        }
 
-#review-us .social-icons i {
-    font-size: 25px;
-    color: #e41e45; /* or your preferred icon color */
-}
+        .circle-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: top center;
+            border-radius: 50%;
+        }
 
-.outer-container {
-    position: relative;
-    display: inline-block;
-    width: 120px; /* match the circle size */
-}
+        .quote-icon {
+            position: absolute;
+            bottom: -20px; /* Adjust to show half-out */
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 40px;
+            color: #e91e63;
+            z-index: 2;
+        }
 
-.circle-container {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-    overflow: hidden;
-}
+        .navbar.navbar-expand-lg {
+            background: rgba(255, 255, 255, 0); 
+            padding: 20px 50px; 
+            z-index: 10;
+        }
+        .home-banner {
+            height: 800px;
+            background: url('images/banner1.jpg') right top no-repeat;
+            background-size: contain;
+            background-color: #f9bdb5;
+            overflow: hidden;
+        }
 
-.circle-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: top center;
-    border-radius: 50%;
-}
+        .home-banner .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.3);
+            z-index: 1;
+        }
+        .home-banner .banner-text {
+            left: 10%;
+        }
+        .custom-control {
+            width: 40px;
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+            font-size: 20px;
+            color: black;
+            background: rgba(255, 255, 255, 0.7);
+            border-radius: 50%;
+            display: inline-block;
+            padding-left: 0px;
+        }
 
-.quote-icon {
-    position: absolute;
-    bottom: -20px; /* Adjust to show half-out */
-    left: 50%;
-    transform: translateX(-50%);
-    font-size: 40px;
-    color: #e91e63;
-    z-index: 2;
-}
+        footer a img:hover {
+            transform: scale(1.1);
+            transition: transform 0.2s ease;
+        }
 
+        .navbar-hide {
+            transform: translateY(-100%);
+            transition: transform 0.3s ease-in-out;
+        }
 
+        /* Mobile View */
+        @media (max-width: 576px) {
+            .img-style {
+                width: 35%;
+            }
+            .home-banner {
+                background-position: center center !important; /* center image for mobile */
+                background-size: cover !important;
+            }
+            .navbar .navbar-toggler {
+                background-color: #976059 !important;
+            }
+            .navbar .navbar-brand {
+                color: #000 !important;
+            }
+            .navbar.navbar-expand-lg {
+                background: white !important;
+                padding: 10px !important;
+            }
+            .navbar .nav-link {
+                color: #000 !important;
+            }
+            .home-banner .banner-text {
+                left: 10px !important;
+                top: 300px !important;
+            }
+        }
     </style>
 </head>
 <body>
-    <!-- <nav>
-        <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="services.html">Services</a></li>
-            <li><a href="gallery.html">Gallery</a></li>
-            <li><a href="#">Contact</a></li>
-        </ul>
-    </nav>
-    <div class="home-banner" style="
-        width: 100%;
-        height: 800px;
-        position: relative;
-        display: flex;
-        align-items: center;
-        justify-content: flex-start;
-        background: url('images/banner1.jpg') right top no-repeat;
-        background-size: auto 100%;
-        background-color: #f9bdb5;">
-        
-        <div class="banner-text" style="
-            padding-left: 50px;
-            color: white;
-            max-width: 50%;">
-            <h1 style="font-size: 2.5rem; margin: 0;">Welcome to Sri Eswari Ghee</h1>
-            <p style="font-size: 1.2rem;">Pure. Traditional. Trusted. Discover the richness of homemade flavor.</p>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand text-white" href="#">Smily Beauty</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link active text-white" href="#">Home</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="services.html">Services</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="gallery.html">Gallery</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="contact.html">Contact</a></li>
+                </ul>
+            </div>
         </div>
-    </div> -->
-    <!-- Transparent Navbar -->
-<nav style="
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 10;
-    background: rgba(255, 255, 255, 0); /* transparent */
-    padding: 20px 50px;
-">
-    <ul style="
-        list-style: none;
-        margin: 0;
-        padding: 0;
-        display: flex;
-        gap: 15px;
-    ">
-        <li class="active"><a href="#" style="color: white; text-decoration: none;">Home</a></li>
-        <li><a href="about.html" style="color: white; text-decoration: none;">About</a></li>
-        <li><a href="services.html" style="color: white; text-decoration: none;">Services</a></li>
-        <!-- <li><a href="gallery.html" style="color: white; text-decoration: none;">Gallery</a></li> -->
-        <li><a href="contact.html" style="color: white; text-decoration: none;">Contact</a></li>
-    </ul>
-</nav>
+    </nav>
+    <!-- Banner Section -->
+    <div class="home-banner d-flex align-items-center position-relative text-white">
+        <!-- Overlay -->
+        <div class="overlay" style=></div>
 
-<!-- Banner Section -->
-<div class="home-banner" style="
-    width: 100%;
-    height: 800px;
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    background: url('images/banner1.jpg') right top no-repeat;
-    background-size: auto 100%;
-    background-color: #f9bdb5;
-    color: white;
-    overflow: hidden;
-">
-
-    <!-- Overlay -->
-    <div style="
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(0, 0, 0, 0.3); /* semi-transparent dark overlay */
-        z-index: 1;
-    "></div>
-
-    <!-- Text content -->
-    <div class="banner-text" style="
-        position: relative;
-        z-index: 2;
-        padding-left: 50px;
-        max-width: 50%;
-    ">
-        <h1 style="font-size: 2.5rem; margin: 10px 0px;font-weight: bold;">Smily Beauty Parlour</h1>
-        <p class="m-0" style="font-size: 1.5rem;">Glow every day, not just on special days.</p>
-        <p class="m-0" style="font-size: 1.5rem">Explore a range of beauty and wellness treatments crafted to bring out your natural glow and help you feel your absolute best.</p>
+        <!-- Text content -->
+        <div class="position-relative z-2">
+            <div class="row">
+                <div class="banner-text col-12 col-sm-12 col-md-12">
+                    <h1 class="fw-bold display-5">Smily Beauty Parlour</h1>
+                    <p class="lead m-0">Glow every day, not just on special days.</p>
+                    <p class="lead m-0">Explore a range of beauty and wellness treatments crafted to bring out your natural glow and help you feel your absolute best.</p>
+                </div>
+            </div>
+        </div>
     </div>
+    <section class="banner-section py-5">
+        <div class="container">
+            <div class="row align-items-center">
+            
+            <!-- Left: Image Stack -->
+            <div class="col-12 col-sm-12 col-md-6 d-flex justify-content-center flex-wrap image-stack">
+                <img src="images/img1.jpg" class="img-style" alt="Beauty 1">
+                <img src="images/img2.jpg" class="img-style" alt="Beauty 2" style="margin-top: 40px;">
+                <img src="images/img3.jpg" class="img-style" alt="Beauty 3">
+                <img src="images/img4.jpg" class="img-style" alt="Beauty 4" style="object-position: right;margin-top: 40px;">
+            </div>
 
-</div>
-<!-- Banner Section -->
-<section class="banner-section py-5">
-  <div class="container">
-    <div class="row align-items-center">
-      
-      <!-- Left: Image Stack -->
-      <div class="col-12 col-md-6 d-flex justify-content-center flex-wrap image-stack">
-        <img src="images/img1.jpg" class="img-style" alt="Beauty 1">
-        <img src="images/img2.jpg" class="img-style" alt="Beauty 2" style="margin-top: 40px;">
-        <img src="images/img3.jpg" class="img-style" alt="Beauty 3">
-        <img src="images/img4.jpg" class="img-style" alt="Beauty 4" style="object-position: right;margin-top: 40px;">
-      </div>
+            <!-- Right: Text Content -->
+            <div class="col-12 col-sm-12 col-md-6">
+                <span>Welcome To</span>
+                <h1 class="mt-2" style="color: #e41e45;">Smily Beauty Parlour</h1>
+                <p class="lead mt-3">
+                Step into a world of elegance and care. At Smily Beauty Parlour, we offer top-notch hair, skin, and beauty services in a warm, relaxing environment. Our experts are here to help you glow inside and out.
+                </p>
+                <a href="services.html" class="btn btn-danger mt-3">KNOW MORE</a>
+            </div>
 
-      <!-- Right: Text Content -->
-      <div class="col-12 col-md-6">
-        <span>Welcome To</span>
-        <h1 class="mt-2" style="color: #e41e45;">Smily Beauty Parlour</h1>
-        <p class="lead mt-3">
-          Step into a world of elegance and care. At Smily Beauty Parlour, we offer top-notch hair, skin, and beauty services in a warm, relaxing environment. Our experts are here to help you glow inside and out.
-        </p>
-        <a href="services.html" class="btn btn-danger mt-3">KNOW MORE</a>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<div class="container my-4">
-        <h3 class="text-center">Services For Every Occasion</h3>
+            </div>
+        </div>
+    </section>
+    <div class="container my-4">
+        <h3 class="text-center" style="color: #e41e45;">Services For Every Occasion</h3>
         <h5 class="text-center">List down special services you offer on occasions like weddings, etc.</h5>
         <div class="row justify-content-center my-5">
-            <div class="col-md-4 d-flex justify-content-center my-3 hidden animate__animated custom-delay-100" data-animation="animate__bounceIn">
+            <div class="col-12 col-sm-12 col-md-4 d-flex justify-content-center my-3 hidden animate__animated custom-delay-100" data-animation="animate__bounceIn">
                 <div class="card text-center card-hover" style="width: 18rem;">
                     <div class="card-body">
                         <h6 class="card-title">Wedding Makeup</h6>
@@ -237,7 +246,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-4 d-flex justify-content-center my-3 hidden animate__animated custom-delay-200" data-animation="animate__bounceIn">
+            <div class="col-12 col-sm-12 col-md-4 d-flex justify-content-center my-3 hidden animate__animated custom-delay-200" data-animation="animate__bounceIn">
                 <div class="card text-center card-hover" style="width: 18rem;">
                     <div class="card-body">
                         <h6 class="card-title">Party Makeup</h6>
@@ -245,7 +254,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-4 d-flex justify-content-center my-3 hidden animate__animated custom-delay-300" data-animation="animate__bounceIn">
+            <div class="col-12 col-sm-12 col-md-4 d-flex justify-content-center my-3 hidden animate__animated custom-delay-300" data-animation="animate__bounceIn">
                 <div class="card text-center card-hover" style="width: 18rem;">
                     <div class="card-body">
                         <h6 class="card-title">Fashion Makeup</h6>
@@ -255,7 +264,6 @@
             </div>
         </div>
     </div>
-
     <div id="review-us" class="p-3">
         <div class="container">
             <div class="row">
@@ -273,91 +281,149 @@
                     <a href="https://www.youtube.com"><i class="fa fa-youtube-play"></i></a>
                 </span>
             </div>
-            <div class="text-center mt-5">
-                <div class="outer-container">
-                    <div class="circle-container">
-                        <img src="images/img3.jpg" alt="Profile Image" class="circle-image">
-                    </div>
-                    <i class="fa fa-quote-right quote-icon"></i>
-                </div>
-            </div>
-            <div class="text-center mt-3">
-                <p style="font-size: 18px;">Smily parlour is the best till date I have experienced in past few months. <br>They know hospitality very well. <br> Rates are also pretty reasonable.</p>
-            </div>
-            <!-- <div class="row">
-                <div class="col-12 col-md-4">
-                    <div class="d-flex flex-column">
-                        <div class="p-2 hidden animate__animated custom-delay-100" data-animation="animate__fadeInLeft">
-                            <div class="key-header m-3">Our Story: Tradition Reimagined</div>
-                            <div class="key-content">At Sri Eswari Pure Ghee, we believe that the purest foods come from the purest intentions. Born out of a passion for healthy living and a deep respect for ancient traditions, we set out to create ghee that captures the true essence of purity and taste. What started as a small family endeavor has now grown into a trusted name, bringing the richness of authentic ghee to homes across the country - and beyond.</div>
+            <div id="testimonialCarousel" class="carousel slide" data-ride="carousel">
+                <div class="carousel-inner">
+                    <!-- Testimonial 1 -->
+                    <div class="carousel-item active">
+                    <div class="testimonial">
+                        <div class="text-center mt-5">
+                            <div class="outer-container">
+                                <div class="circle-container">
+                                <img src="images/img3.jpg" alt="Profile Image" class="circle-image">
+                                </div>
+                                <i class="fa fa-quote-right quote-icon"></i>
+                            </div>
+                        </div>
+                        <div class="text-center mt-3">
+                            <p style="font-size: 18px;">Smily parlour is the best till date I have experienced in past few months. <br>They know hospitality very well. <br> Rates are also pretty reasonable.</p>
                         </div>
                     </div>
-                </div>
-                <div class="col-12 col-md-4 text-center">
-                    <img class="hidden iphone_white animate__animated custom-delay-100" src="images/ghee1.jpg" alt=""data-animation="animate__fadeInUp">
-                </div>
-                <div class="col-12 col-md-4">
-                    <div class="d-flex flex-column">
-                        <div class="p-2 hidden animate__animated custom-delay-100" data-animation="animate__fadeInRight">
-                            <div class="key-header m-3">Our Mission: Purity, Quality, Trust</div>
-                            <div class="key-content">Our mission is simple yet powerful:<br>
-                                To deliver premium-quality ghee that nurtures the body, delights the taste buds, and honors the time-tested methods of our ancestors.
-                                We are committed to preserving traditional techniques, sourcing ethically, and ensuring that every drop of our ghee is packed with natural goodness.</div>
+                    </div>
+
+                    <!-- Testimonial 2 -->
+                    <div class="carousel-item">
+                    <div class="testimonial">
+                        <div class="text-center mt-5">
+                            <div class="outer-container">
+                                <div class="circle-container">
+                                <img src="images/img1.jpg" alt="Profile Image" class="circle-image">
+                                </div>
+                                <i class="fa fa-quote-right quote-icon"></i>
+                            </div>
+                        </div>
+                        <div class="text-center mt-3">
+                            <p style="font-size: 18px;">A wonderful experience! <br>Highly professional and friendly staff. <br>Would recommend to everyone.</p>
                         </div>
                     </div>
+                    </div>
+
+                    <!-- Testimonial 3 -->
+                    <div class="carousel-item">
+                    <div class="testimonial">
+                        <div class="text-center mt-5">
+                            <div class="outer-container">
+                                <div class="circle-container">
+                                <img src="images/img4.jpg" alt="Profile Image" class="circle-image">
+                                </div>
+                                <i class="fa fa-quote-right quote-icon"></i>
+                            </div>
+                        </div>
+                        <div class="text-center mt-3">
+                            <p style="font-size: 18px;">Excellent service and great value. <br>Very satisfied with the experience!</p>
+                        </div>
+                    </div>
+                    </div>
                 </div>
-            </div> -->
+                <!-- Carousel controls -->
+                <a class="carousel-control-prev" href="#testimonialCarousel" role="button" data-slide="prev">
+                    <span class="custom-control">&#10094;</span>
+                </a>
+                <a class="carousel-control-next" href="#testimonialCarousel" role="button" data-slide="next">
+                    <span class="custom-control">&#10095;</span>
+                </a>
+            </div>
         </div>
     </div>
-
-
-
     <footer style="background-color: #111; color: white; padding: 50px 20px;">
-        <div style="display: flex; flex-wrap: wrap; justify-content: space-between;">
-            <div style="flex: 1; min-width: 250px;">
-                <img src="logo.png" alt="Christina Koller" style="height: 60px;">
-                <h2>Christina Koller</h2>
-                <p><strong>You can also list down your achievements or some well-known clients you’ve worked for.</strong>
-                    Such details often attract customers and encourage them to give you a try. Make sure you add everything
-                    possible in this section.</p>
-            </div>
+        <div class="container">
+            <div class="row text-center text-md-start gy-4">
 
+                <!-- Profile/Info -->
+                <div class="col-12 col-md-6 col-lg-3">
+                    <div class="circle-container mb-3">
+                        <img src="images/img3.jpg" alt="Profile Image" class="circle-image" style="width:100px; height:100px; border-radius:50%;">
+                    </div>
+                    <h2>Christina Koller</h2>
+                    <p><strong>You can also list down your achievements or some well-known clients you’ve worked for.</strong>
+                        Such details often attract customers and encourage them to give you a try. Make sure you add everything
+                        possible in this section.</p>
+                </div>
 
-            <div style="flex: 1; min-width: 130px;margin-left:70px;">
-                <h3>Quick Links</h3>
-                <div>
-                    <p><a href="#" style="color: white; text-decoration: none;">Home</a></p>
-                    <p><a href="#" style="color: white; text-decoration: none;">About</a></p>
-                    <p><a href="#" style="color: white; text-decoration: none;">Services</a></p>
-                    <p><a href="#" style="color: white; text-decoration: none;">Portfolio</a></p>
-                    <p><a href="#" style="color: white; text-decoration: none;">Contact</a></p>
+                <!-- Quick Links -->
+                <div class="col-12 col-sm-6 col-lg-2">
+                    <h3>Quick Links</h3>
+                    <p><a href="#" class="text-white text-decoration-none">Home</a></p>
+                    <p><a href="#" class="text-white text-decoration-none">About</a></p>
+                    <p><a href="#" class="text-white text-decoration-none">Services</a></p>
+                    <p><a href="#" class="text-white text-decoration-none">Portfolio</a></p>
+                    <p><a href="#" class="text-white text-decoration-none">Contact</a></p>
+                </div>
+
+                <!-- Contact Info -->
+                <div class="col-12 col-sm-6 col-lg-4">
+                    <h3>Say Hi!</h3>
+                    <p>info@example.com<br>contact@example.com</p>
+
+                    <h3>Call Us</h3>
+                    <p>Phone: +1 916-875-2235<br>Toll Free: +1 910-626-85255</p>
+
+                    <h3>Find Us</h3>
+                    <p>123 Fifth Avenue, Opp Hut,<br>New York, USA.</p>
+                </div>
+
+                <!-- Social Media -->
+                <div class="col-12 col-md-6 col-lg-3">
+                    <h3>Follow Us</h3>
+                    <div class="d-flex justify-content-center justify-content-md-start gap-3">
+                        <a href="https://facebook.com" target="_blank">
+                            <img src="https://img.icons8.com/ios-filled/30/ffffff/facebook-new.png" alt="Facebook" style="height: 30px; cursor: pointer;">
+                        </a>
+                        <a href="https://twitter.com" target="_blank">
+                            <img src="https://img.icons8.com/ios-filled/30/ffffff/twitter--v1.png" alt="Twitter" style="height: 30px; cursor: pointer;">
+                        </a>
+                        <a href="https://instagram.com" target="_blank">
+                            <img src="https://img.icons8.com/ios-filled/30/ffffff/instagram-new.png" alt="Instagram" style="height: 30px; cursor: pointer;">
+                        </a>
+                        <a href="https://youtube.com" target="_blank">
+                            <img src="https://img.icons8.com/ios-filled/30/ffffff/youtube-play.png" alt="YouTube" style="height: 30px; cursor: pointer;">
+                        </a>
+                    </div>
                 </div>
             </div>
-            <div style="flex: 1; min-width: 200px;line-height: 15px;">
-                <h3>Say Hi!</h3>
-                <p>info@example.com<br>contact@example.com</p>
 
-                <h3>Call Us</h3>
-                <p>Phone: +1 916-875-2235<br>Toll Free: +1 910-626-85255</p>
-
-                <h3>Find Us</h3>
-                <p>123 Fifth Avenue, Opp Hut,<br>New York, USA.</p>
+            <div class="text-center mt-4" style="font-size: 14px;">
+                <p>Copyright © 2025 Makeup Artist</p>
+                <p>Powered by Makeup Artist</p>
             </div>
-            <div style="flex: 1; min-width: 150px;">
-                <h3>Follow Us</h3>
-                <div style="display: flex; gap: 10px;">
-                    <img src="facebook-icon.png" alt="Facebook" style="height: 30px; cursor: pointer;">
-                    <img src="twitter-icon.png" alt="Twitter" style="height: 30px; cursor: pointer;">
-                    <img src="instagram-icon.png" alt="Instagram" style="height: 30px; cursor: pointer;">
-                    <img src="youtube-icon.png" alt="YouTube" style="height: 30px; cursor: pointer;">
-                </div>
-            </div>
-        </div>
-
-        <div style="text-align: center; margin-top: 40px; font-size: 14px;">
-            <p>Copyright © 2025 Makeup Artist</p>
-            <p>Powered by Makeup Artist</p>
         </div>
     </footer>
+    <script>
+        let lastScrollTop = 0;
+        const navbar = document.querySelector('.navbar');
+
+        window.addEventListener('scroll', function () {
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+            if (scrollTop > lastScrollTop) {
+                // Scroll down
+                navbar.classList.add('navbar-hide');
+            } else {
+                // Scroll up
+                navbar.classList.remove('navbar-hide');
+            }
+
+            lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // For mobile or negative scrolling
+        });
+    </script>
 </body>
 </html>
